@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "css": "sass.cmd --watch src:public",
+    "deploy": "sass.cmd src:public && cp src/index.html .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
