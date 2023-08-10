@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Source Sans Pro", system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+}
+
+.app .app-header {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 52px;
+  padding: 0 1rem;
+  background-color: #FF7D00;
+}
+.app .app-header .app-title {
+  flex: 1;
+  font-size: 24px;
+  color: #FFF;
+}
+.app .app-header .app-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+.app .app-header .app-actions .app-btn {
+  width: 28px;
+  height: 28px;
+}
+.app .app-header .app-actions .app-btn.btn-menu {
+  background-image: url("./images/menu.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.app .app-header .app-menu {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 60px;
+  z-index: 1000;
+  width: 180px;
+  border: 1px solid #ddd;
+  background-color: #FFF;
+  border-radius: 4px;
+  box-shadow: 0 15px 15px 1px rgba(15, 37, 64, 0.1019607843);
+}
+.app .app-header .app-menu .menu-tags {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+.app .app-header .app-menu .menu-tags .tag {
+  display: block;
+  padding: 7px 10px;
+  text-decoration: none;
+  margin-inline-end: 10px;
+  margin-block-end: 7px;
+  color: #595959;
+  font-size: 14px;
+}
+.app .main-body {
+  padding: 1rem;
+}
+.app .main-body .items-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.app .main-body .items-container .item {
+  display: flex;
+  min-height: 160px;
+  background-color: #EEE;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.app .main-body .items-container .item .item-image {
+  flex: 1;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+.app .footer {
+  padding: 1rem;
+}
+.app .footer .p {
+  font-size: 12px;
+  color: #939393;
+  text-align: center;
+  word-break: break-word;
+}
+
+/*# sourceMappingURL=index.css.map */
