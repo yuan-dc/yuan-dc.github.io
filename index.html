@@ -23,6 +23,14 @@
     <div class="p">图片来源于网络，仅供参考，若侵犯您的权益请联系我们删除</div>
     <div class="p">yuan-studio@outlook.com</div>
   </div>
+
+  <div class="image-preview">
+    <div class="mask"></div>
+    <div class="image-container"></div>
+    <!-- <div class="image-preview-container">
+      <div class="image-container"></div>
+    </div> -->
+  </div>
 </div>
 
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -34,7 +42,7 @@ const samples = [
 // { url: 'https://s.cn.bing.net/th?id=OHR.ZelenciSprings_ZH-CN8022746409_1920x1080.webp&qlt=50', tags: ['uiux'] },
 ];
 for (let i = 1; i <= 44; i++) {
-  samples.push({ url: `./public/images/sample/plane/thumb/${i}.jpg`, tags: ['uiux'] });
+  samples.push({ url: `./public/images/sample/thumb/${i}.jpg`, tags: ['uiux'] });
 }
 
 $(document.body).ready(function() {
@@ -74,6 +82,11 @@ function init() {
       toggleMenu(false);
     }
   });
+
+  // preview
+  $('.image-preview .mask').on('click', function() {
+    $('.image-preview').fadeOut();
+  });
 }
 
 function renderTags() {
@@ -92,7 +105,7 @@ function renderSamples(tag) {
 
   const items = filtered.map(e => {
     const { url } = e;
-    return `<div class="item">
+    return `<div class="item" onclick="show('${url}')">
       <div class="item-image" style="background-image: url(${url});"></div>
     </div>`;
   });
@@ -102,6 +115,24 @@ function renderSamples(tag) {
 
 function filterSamples(tag) {
   renderSamples(tag);
+}
+
+function show(url) {
+  const width = document.body.clientWidth;
+  let source = url.replace(/\/thumb\//g, '\/');
+  console.log(source);
+  const image = new Image();
+  image.onload = function() {
+    console.log(this.width, this.height, width);
+    const imageHeight = width * this.height / this.width;
+    $('.image-preview .image-container').css('height', `${imageHeight}px`);
+  }
+  image.src = source;
+
+  $('.image-preview .image-container').css({
+    backgroundImage: `url(${source})`,
+  });
+  $('.image-preview').css('display', 'flex').fadeIn();
 }
 
 init();
