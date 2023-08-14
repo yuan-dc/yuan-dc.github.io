@@ -126,6 +126,7 @@ body {
     display: none;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 
     .mask {
       position: fixed;
@@ -135,6 +136,22 @@ body {
       height: 100%;
       z-index: 100;
       background-color: #000000a6;
+    }
+
+    .close {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      z-index: 109;
+      width: 42px;
+      height: 42px;
+      padding: 10px;
+      border-radius: 6px;
+      background: url(../public/images/close.svg) center center no-repeat;
+      background-color: #FFFFFFa9;
+      background-size: 80%;
+      filter: drop-shadow(-100px 0 0 #FFF);
+      transform: translateX(100px);
     }
 
     .image-container {
@@ -148,17 +165,17 @@ body {
       background-position: center;
     }
 
-    .image-preview-container {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 110;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+    // .image-preview-container {
+    //   position: fixed;
+    //   left: 0;
+    //   top: 0;
+    //   width: 100%;
+    //   height: 100%;
+    //   z-index: 110;
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: center;
+    // }
 
   }
 }

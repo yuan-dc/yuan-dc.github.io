@@ -105,6 +105,7 @@ body {
   display: none;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 .app .image-preview .mask {
   position: fixed;
@@ -115,6 +116,21 @@ body {
   z-index: 100;
   background-color: rgba(0, 0, 0, 0.6509803922);
 }
+.app .image-preview .close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 109;
+  width: 42px;
+  height: 42px;
+  padding: 10px;
+  border-radius: 6px;
+  background: url(../public/images/close.svg) center center no-repeat;
+  background-color: rgba(255, 255, 255, 0.662745098);
+  background-size: 80%;
+  filter: drop-shadow(-100px 0 0 #FFF);
+  transform: translateX(100px);
+}
 .app .image-preview .image-container {
   width: 100%;
   min-height: 5vh;
@@ -123,17 +139,6 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-}
-.app .image-preview .image-preview-container {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 110;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 /*# sourceMappingURL=index.css.map */
