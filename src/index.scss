@@ -12,6 +12,7 @@ body {
 }
 
 .app {
+  // position: relative;
 
   .app-header {
     display: flex;
@@ -112,5 +113,52 @@ body {
       text-align: center;
       word-break: break-word;
     }
+  }
+
+  .image-preview {
+    position: relative;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    .mask {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      background-color: #000000a6;
+    }
+
+    .image-container {
+      // background-color: #FFF;
+      width: 100%;
+      min-height: 5vh;
+      max-height: 100%;
+      z-index: 110;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+
+    .image-preview-container {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 110;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
   }
 }
